@@ -1,3 +1,5 @@
+const { body, validationResult } = require('express-validator');
+
 const connectToMongo = require("./db");
 const express = require('express');
 
@@ -8,6 +10,7 @@ const port = 3000;
 
 //available routes
 
+app.use(express.json());
 
 app.use('/api/auth',require('./routes/auth'));
 // app.use('/api/notes',require('./routes/notes'));
