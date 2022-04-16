@@ -12,7 +12,7 @@ router.get("/fetchallnotes", fetchuser, async (req, res) => {
   } catch (error) {
     //catch errors
     console.error(error.message);
-    res.status(500).send("some error occurred");
+    res.status(500).send("Internal Server Error");
   }
 });
 
@@ -40,7 +40,7 @@ router.post("/addnote",fetchuser,[
     } catch (error) {
       //catch errors
       console.error(error.message);
-      res.status(500).send("some error occurred");
+      res.status(500).send("Internal Server Error");
     }
   }
 );
@@ -67,7 +67,7 @@ router.put("/updatenote/:id",fetchuser, async (req, res) => {
   } catch (error) {
     //catch errors
     console.error(error.message);
-    res.status(500).send("some error occurred");
+    res.status(500).send("Internal Server Error");
   }
   
 
@@ -90,7 +90,7 @@ router.delete("/deletenote/:id",fetchuser, async (req, res) => {
   } catch (error) {
     //catch errors
     console.error(error.message);
-    res.status(500).send("some error occurred");
+    res.status(500).send("Internal Server Error");
   }
   
 
