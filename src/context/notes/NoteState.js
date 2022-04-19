@@ -21,7 +21,34 @@ const NoteState = (props)=>{
           "tag": "xstechie , suhail",
           "date": "2022-04-17T20:54:36.141Z",
           "__v": 0
-        }
+        },
+        {
+          "_id": "625c7e8c480f27b781aa198a",
+          "user": "6259e8a061e9d66fea25c091",
+          "title": "workign on some projects",
+          "description": "Once upon a time there was a person named xstechie has a instagram page called xstechie",
+          "tag": "xstechie , suhail",
+          "date": "2022-04-17T20:54:36.141Z",
+          "__v": 0
+        },
+        {
+          "_id": "625c7e8c480f27b781aa198a",
+          "user": "6259e8a061e9d66fea25c091",
+          "title": "workign on some projects",
+          "description": "Once upon a time there was a person named xstechie has a instagram page called xstechie",
+          "tag": "xstechie , suhail",
+          "date": "2022-04-17T20:54:36.141Z",
+          "__v": 0
+        },
+        {
+          "_id": "625c7e8c480f27b781aa198a",
+          "user": "6259e8a061e9d66fea25c091",
+          "title": "workign on some projects",
+          "description": "Once upon a time there was a person named xstechie has a instagram page called xstechie",
+          "tag": "xstechie , suhail",
+          "date": "2022-04-17T20:54:36.141Z",
+          "__v": 0
+        },
       ]
       const [notes, setNotes] = useState(notesInitial)
     return (
