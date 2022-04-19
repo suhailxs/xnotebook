@@ -19,7 +19,7 @@ const NoteState = (props)=>{
           "title": "workign on some projects",
           "description": "Once upon a time there was a person named xstechie has a instagram page called xstechie",
           "tag": "xstechie , suhail",
-          "date": "2022-04-17T20:54:36.141Z",
+          "date": "2022-04-17T20:54:33.141Z",
           "__v": 0
         },
         {
@@ -28,7 +28,7 @@ const NoteState = (props)=>{
           "title": "workign on some projects",
           "description": "Once upon a time there was a person named xstechie has a instagram page called xstechie",
           "tag": "xstechie , suhail",
-          "date": "2022-04-17T20:54:36.141Z",
+          "date": "2022-04-17T20:54:35.141Z",
           "__v": 0
         },
         {
@@ -37,7 +37,7 @@ const NoteState = (props)=>{
           "title": "workign on some projects",
           "description": "Once upon a time there was a person named xstechie has a instagram page called xstechie",
           "tag": "xstechie , suhail",
-          "date": "2022-04-17T20:54:36.141Z",
+          "date": "2022-04-17T20:54:46.141Z",
           "__v": 0
         },
         {
