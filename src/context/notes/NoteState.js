@@ -4,7 +4,7 @@ import { useState } from "react";
 const NoteState = (props) => {
   const host = "http://localhost:5000";
   const notesInitial = [];
-  //Add a Note
+  //Get all Notes
   const getNotes = async () => {
     //API Call
     const response = await fetch(`${host}/api/notes/fetchallnotes`, {
@@ -23,7 +23,6 @@ const NoteState = (props) => {
 
   //Add a Note
   const addNote = async (title, description, tag) => {
-    //TODO : API Call
     //API Call
     const response = await fetch(`${host}/api/notes/addnote/`, {
       method: "POST",
@@ -34,7 +33,7 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
-    const json = response.json();
+    // const json = response.json();
 
     //Logic to Add in Client
     console.log("Adding a Note/");
@@ -84,7 +83,7 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
-    const json = response.json();
+    // const json = response.json();
 
     //Logic to edit in Client
     for (let index = 0; index < notes.length; index++) {
