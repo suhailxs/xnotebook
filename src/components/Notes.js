@@ -8,20 +8,22 @@ const Notes = () => {
   const { notes, getNotes,editNote } = context;
 
   
-  const [note, setnote] = useState({etitle:"",edescription : "", etag:"default"});
+  const [note, setnote] = useState({id:"",etitle:"",edescription : "", etag:"default"});
   useEffect(() => {
     // eslint-disable-next-line
     getNotes();
   }, []);
 
   const ref = useRef(null);
+  const refClose = useRef(null);
 
   const updateNote = (currentNote) => {
     ref.current.click();
-    setnote({etitle:currentNote.title,edescription:currentNote.description,etag:currentNote.tag})
+    setnote({id:currentNote._id,etitle:currentNote.title,edescription:currentNote.description,etag:currentNote.tag})
   };
   const handleClick = (e) => {
-    e.preventDefault();
+    refClose.current.click();
+    editNote(note.id,note.etitle,note.edescription,note.etag);
   };
 
   const onChange = (e) => {
@@ -116,6 +118,7 @@ const Notes = () => {
                 type="button"
                 className="btn btn-secondary"
                 data-dismiss="modal"
+                ref={refClose}
               >
                 Close
               </button>
