@@ -10,8 +10,8 @@ const Notes = () => {
   
   const [note, setnote] = useState({id:"",etitle:"",edescription : "", etag:"default"});
   useEffect(() => {
-    // eslint-disable-next-line
     getNotes();
+    // eslint-disable-next-line
   }, []);
 
   const ref = useRef(null);
@@ -29,6 +29,15 @@ const Notes = () => {
   const onChange = (e) => {
     setnote({ ...note, [e.target.name]: e.target.value });
   };
+
+  const checkLength = ()=>{
+    if(note.etitle.length>=5 && note.edescription.length>=5){
+      return false;
+    }
+    else{
+      return true
+    }
+  }
 
   return (
     <>
@@ -83,6 +92,8 @@ const Notes = () => {
                     onChange={onChange}
                     name="etitle"
                     value={note.etitle}
+                    minLength={5}
+                    required
                   />
                 </div>
                 <div className="mb-3">
@@ -96,6 +107,8 @@ const Notes = () => {
                     onChange={onChange}
                     name="edescription"
                     value={note.edescription}
+                    minLength={5}
+                    required
                   />
                 </div>
                 <div className="mb-3">
@@ -122,7 +135,7 @@ const Notes = () => {
               >
                 Close
               </button>
-              <button type="button" onClick={handleClick} className="btn btn-primary">
+              <button type="button" disabled={checkLength()} onClick={handleClick} className="btn btn-primary">
                 Update Note
               </button>
             </div>
@@ -132,6 +145,9 @@ const Notes = () => {
       <div>
         <div className="row  my-3">
           <h2>Add a note</h2>
+          <div className="container">
+            {notes.length===0&&'no notes to display'}
+          </div>
           {notes.map((note) => {
             return (
               <Noteitems note={note} updateNote={updateNote} key={note.date} />
