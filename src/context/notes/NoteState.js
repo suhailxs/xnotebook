@@ -5,7 +5,8 @@ import { useState } from "react";
 const NoteState = (props)=>{
     const notesInitial = [
         {
-          "_id": "625b149fd620279102613a3d",
+          
+          "_id": "625b149fd620279102623a3d",
           "user": "6259e8a061e9d66fea25c091",
           "title": "mytitle",
           "description": "suhail wait up  haha",
@@ -14,7 +15,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "625c7e8c480f27b781aa198a",
+          "_id": "625c7e8c480f27b781qa198a",
           "user": "6259e8a061e9d66fea25c091",
           "title": "workign on some projects",
           "description": "Once upon a time there was a person named xstechie has a instagram page called xstechie",
@@ -23,7 +24,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "625c7e8c480f27b781aa198a",
+          "_id": "625c7e8c480f27b781wa198a",
           "user": "6259e8a061e9d66fea25c091",
           "title": "workign on some projects",
           "description": "Once upon a time there was a person named xstechie has a instagram page called xstechie",
@@ -32,7 +33,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "625c7e8c480f27b781aa198a",
+          "_id": "625c7e8c480f27b781ca198a",
           "user": "6259e8a061e9d66fea25c091",
           "title": "workign on some projects",
           "description": "Once upon a time there was a person named xstechie has a instagram page called xstechie",
@@ -41,7 +42,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "625c7e8c480f27b781aa198a",
+          "_id": "625c7e8c480f27b781ab198a",
           "user": "6259e8a061e9d66fea25c091",
           "title": "workign on some projects",
           "description": "Once upon a time there was a person named xstechie has a instagram page called xstechie",
@@ -69,8 +70,11 @@ const NoteState = (props)=>{
       }
 
       //Delete a Note
-      const deleteNote = () =>{
-        
+      const deleteNote = (id) =>{
+        //TODO : API Call
+        console.log("Deleting the note");
+        const newNote = notes.filter((note)=>{return note._id!==id})
+        setNotes(newNote)
       }
 
       //Edit a Note
