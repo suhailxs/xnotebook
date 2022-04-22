@@ -7,6 +7,7 @@ var jwt = require("jsonwebtoken");
 var fetchuser = require('../middleware/fetchuser');
 
 const JWT_SECRET = "suhailtechy";
+let success = false;
 //ROUTE 1 : Create a User using: "/api/auth/createuser". Doesn't require Auth
 router.post(
   "/createuser",
@@ -26,7 +27,7 @@ router.post(
       //create a new error
       let user = await User.findOne({ email: req.body.email });
       if (user) {
-        return res.status(400).json({ error: "email already exist" });
+        return res.status(400).json({success , error: "email already exist" });
       }
       const salt = await bcrypt.genSalt(10);
       const secPass = await bcrypt.hash(req.body.password, salt);
@@ -43,7 +44,8 @@ router.post(
       const authtoken = jwt.sign(data, JWT_SECRET);
       // console.log(jwt_data)
       // res.json(user)
-      res.json({ authtoken });
+      success=true;
+      res.json({success, authtoken });
     } catch (error) {
       //catch errors
       console.error(error.message);
@@ -74,15 +76,16 @@ router.post(
       if (!passwordCompare) {
         return res
           .status(400)
-          .json({ error: "Please enter correct credentials" });
+          .json({success, error: "Please enter correct credentials" });
       }
       const data = {
         user: {
           id: user.id,
         },
       };
+      success=true
       const authtoken = jwt.sign(data, JWT_SECRET);
-      res.json({ authtoken });
+      res.json({success, authtoken });
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal Server Occured");
